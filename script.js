@@ -22,6 +22,16 @@ function displayResults(result) {
     resultArtist.classList.remove('hidden');
 }
 
+function createHTMLElement(elementType, attributes, content) {
+    const element = document.createElement(elementType);
+    for (const key in attributes) {
+        element.setAttribute(key, attributes[key]);
+    }
+    element.innerHTML = content;
+    return element;
+}
+
+
 document.addEventListener('input', function () {
     const searchTerm = searchInput.value.toLowerCase();
     if (searchTerm === '') {
